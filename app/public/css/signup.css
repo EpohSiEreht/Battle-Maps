@@ -1,0 +1,32 @@
+html{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-image: url(http://www.wallpaperhi.com/thumbnails/detail/20120221/pokemon%20fields%20ruby%201920x1200%20wallpaper_www.wallpaperhi.com_58.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.radio-inline{
+	position: relative;
+	display: inline-block;
+	text-align: center !important;
+	padding: 20px;
+}
+
+input{
+	position: relative;
+	margin-left: -8px !important;
+}
+
+#signup-button{
+	position: relative;
+	width: 100%;
+}

@@ -1,0 +1,802 @@
+
+html{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+body{
+  background-color: #A3EE8C;
+	background-image: url(http://www.wallpaperhi.com/thumbnails/detail/20120221/pokemon%20fields%20ruby%201920x1200%20wallpaper_www.wallpaperhi.com_58.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+h1, p {
+  font-family: 'VT323', serif;
+}
+
+/* SideNav Bar */
+.row{
+    margin-left:0px;
+    margin-right:0px;
+}
+
+#wrapper {
+  position: absolute;
+    padding-left: 70px;
+    transition: all .4s ease 0s;
+    height: 100%
+}
+
+#sidebar-wrapper {
+    margin-left: -150px;
+    left: 70px;
+    width: 150px;
+    background: #222;
+    position: fixed;
+    height: 100%;
+    z-index: 10000;
+    transition: all .4s ease 0s;
+}
+
+.sidebar-nav {
+    display: block;
+    float: left;
+    width: 400px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a.logout{
+  background-color: #FF4B4A !important;
+  color: white !important;
+  border: 1px solid #AF2D00 !important;
+}
+
+.logout-list{
+  position: absolute;
+  bottom: 20px;
+}
+
+#wrapper.active {
+    padding-left: 400px;
+}
+
+#wrapper.active #sidebar-wrapper {
+    left: 150px;
+    width: 400px;
+    transition: all .4s ease 0s;
+}
+
+#wrapper.active .logout {
+    left: 150px;
+    width: 400px;
+    transition: all .4s ease 0s;
+}
+
+#wrapper.active .sidebar-nav li a,#wrapper.active #sidebar_menu li a {
+    left: 150px;
+    width: 400px;
+    transition: all .4s ease 0s;
+}
+
+#sidebar_menu li a, .sidebar-nav li a {
+    color: #999;
+    display: block;
+    float: left;
+    text-decoration: none;
+    width: 150px;
+    background: #252525;
+    border-top: 1px solid #373737;
+    border-bottom: 1px solid #1A1A1A;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -o-transition: background .5s;
+    -ms-transition: background .5s;
+    transition: background .5s;
+    transition: all .4s ease 0s;
+}
+
+#sidebar{
+  display: inline-block;
+  width: 150px;
+}
+
+.sidebar_name {
+    padding-top: 25px;
+    color: #fff;
+    opacity: .7;
+}
+
+.sidebar-nav li {
+    line-height: 40px;
+    text-indent: 20px;
+}
+
+.sidebar-nav li a {
+    color: #999999;
+    display: block;
+    text-decoration: none;
+}
+
+.sidebar-nav li a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+#main_icon {
+    float:right;
+   padding-right: 20px;
+   padding-top:20px;
+}
+
+.sub_icon {
+  float:right;
+  padding-right: 20px;
+  padding-top:10px;
+}
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+/*GOOGLE MAPS SECTION*/
+#map{
+  position: absolute;
+  height: 100%;
+  width: -moz-calc(100% - 70px);
+  width: -webkit-calc(100% - 70px);
+  width: -o-calc(100% - 70px);
+  width: calc(100% - 70px);
+  left: 70px;
+  right: 70px;
+}
+
+.gm-style-iw{
+	text-align: center;
+  background-color: #FF464F !important;
+  color: white;
+}
+
+.gm-style-iw + div{
+  right: 20px !important;
+  top: 13px !important;
+  border-radius: 50% !important;
+  opacity: 1 !important;
+}
+
+.information{
+	position: relative;
+}
+
+.top{
+	position: relative;
+	top: 10%;
+	height: 80%;
+	width: 100%;
+  background-color: red !important;
+}
+
+.bottom{
+	position: relative;
+	height: auto;
+	width: 100%;
+}
+
+a.battle{
+	position: relative;
+	width: 100%;
+  margin-top: 60px;
+}
+
+.infopic{
+	position: relative;
+	display: inline-block;
+	width: 70px;
+	height: 70px;
+}
+
+.infoCol{
+	position: relative;
+	display: inline-block;
+	text-align: left;
+	margin-top: 40px;
+}
+
+/* infoWindow Sections */
+#pokelist{
+  position: relative;
+  width: 100%;
+}
+
+.pokeblock{
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: 30%;
+  text-align: center;
+}
+
+.radio{
+  position: absolute;
+  margin: 30px;
+}
+
+.pokepic{
+  width: 120px;
+  height: auto;
+  text-align: center;
+}
+
+#signup-button{
+  position: relative;
+  width: 100%;
+  margin: 60px 0;
+}
+
+/* BATTLE AREA */
+
+#battle-area{
+  position: absolute;
+  display: none;
+	background-color: #A3EE8C;
+  height: 100%;
+  width: -moz-calc(100% - 70px);
+  width: -webkit-calc(100% - 70px);
+  width: -o-calc(100% - 70px);
+  width: calc(100% - 70px);
+  left: 70px;
+  right: 70px;
+  z-index: 9000;
+  font-family: 'VT323', ;
+}
+
+.screen{
+  position: relative;
+  display: block;
+  margin: 120px auto;
+  width: 500px;
+  height: 350px;
+}
+
+#left-hider{
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  left: -100px;
+  background-color: #FF5669;
+  z-index: 90000;
+}
+
+#right-hider{
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  right: -100px;
+  background-color: #FF5669;
+  z-index: 90000;
+}
+
+#bottom-hider{
+  position: absolute;
+  width: 700px;
+  height: 450px;
+  left: -100px;
+  bottom: -450px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #FF5669;
+  z-index: 90000;
+}
+
+#top-hider{
+  position: absolute;
+  width: 700px;
+  height: 100px;
+  left: -100px;
+  top: -100px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #FF5669;
+  z-index: 90000;
+}
+
+#left-border{
+  position: absolute;
+  width: 80px;
+  height: 100%;
+  left: -80px;
+  background-color: black;
+  z-index: 99000;
+}
+
+#right-border{
+  position: absolute;
+  width: 80px;
+  height: 100%;
+  right: -80px;
+  background-color: black;
+  z-index: 99000;
+}
+
+#bottom-border{
+  position: absolute;
+  width: 660px;
+  height: 80px;
+  left: -80px;
+  bottom: -80px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: black;
+  z-index: 99000;
+}
+
+#top-border{
+  position: absolute;
+  width: 660px;
+  height: 80px;
+  left: -80px;
+  top: -80px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: black;
+  z-index: 99000;
+}
+
+#back-drop{
+  position: absolute;
+  width: 100%;
+  height: 250px;
+}
+
+#enemy-trainer{
+  position: absolute;
+  width: 70px;
+  max-height: auto;
+  bottom: 200px;
+  right: 80px;
+  z-index: 90000;
+}
+
+#enemy-name{
+  position: absolute;
+  top: 11px;
+  left: 25px;
+  font-size: 18px;
+  z-index: 80000;
+}
+
+#enemy-character{
+  display: none;
+  position: absolute;
+  left: 320px;
+  width: 100px;
+  height: auto;
+  bottom: 200px;
+  z-index: 48000;
+}
+
+#enemy-stat-area{
+  display: none;
+}
+
+#enemy-health-background{
+  position: absolute;
+  top: 55px;
+  left: 109px;
+  width: 130px;
+  height: 15px;
+  background-color: #35363B;
+  z-index: 49999;
+}
+
+#enemy-health{
+  position: absolute;
+  top: 55px;
+  left: 109px;
+  width: 130px;
+  height: 15px;
+  background-color: #8DEF6A;
+  z-index: 49999;
+}
+
+#enemy-level{
+  position: absolute;
+  width: 30px;
+  height: 22px;
+  left: 209px;
+  top: 8px;
+  font-size: 22px;
+  z-index: 55000;
+}
+
+#enemy-status{
+  position: absolute;
+  left: 10px;
+  width: 260px;
+  height: auto;
+  top: 20px;
+  z-index: 50000;
+  font-family: 'VT323', ;
+}
+
+#your-trainer{
+  position: absolute;
+  width: 90px;
+  height: auto;
+  bottom: 45px;
+  left: 55px;
+  z-index: 90000;
+}
+
+#your-name{
+  position: absolute;
+  top: 158px;
+  left: 265px;
+  font-size: 18px;
+  z-index: 80000;
+}
+
+#your-character{
+  display: none;
+  position: absolute;
+  left: 60px;
+  width: 100px;
+  height: auto;
+  bottom: 70px;
+  z-index: 70000;
+}
+
+#your-stat-area{
+  display: none;
+}
+
+#your-health-background{
+  position: absolute;
+  top: 200px;
+  left: 350px;
+  width: 120px;
+  height: 15px;
+  background-color: #35363B;
+  z-index: 49999;
+}
+
+#your-health{
+  position: absolute;
+  top: 200px;
+  left: 350px;
+  width: 120px;
+  height: 15px;
+  background-color: #8DEF6A;
+  z-index: 49999;
+}
+
+#your-level{
+  position: absolute;
+  width: 30px;
+  height: 22px;
+  right: 25px;
+  bottom: 143px;
+  font-size: 22px;
+  z-index: 55000;
+}
+
+#your-exp-background{
+  position: absolute;
+  width: 162px;
+  height: 9px;
+  left: 309px;
+  bottom: 104px;
+  background-color: white;
+  z-index: 49000;
+}
+
+#your-exp{
+  position: absolute;
+  width: 162px;
+  height: 9px;
+  left: 309px;
+  bottom: 104px;
+  background-color: #57C4F2;
+  z-index: 49999;
+}
+
+#your-hp{
+  position: absolute;
+  width: 30px;
+  height: 17px;
+  font-size: 17px;
+  bottom: 107px;
+  right: 86px;
+  text-align: right;
+  z-index: 89999;
+}
+
+#your-max-hp{
+  position: absolute;
+  width: 30px;
+  height: 17px;
+  font-size: 17px;
+  bottom: 107px;
+  right: 40px;
+  z-index: 89999;
+}
+
+#your-status{
+  position: absolute;
+  right: 10px;
+  width: 260px;
+  height: auto;
+  bottom: 102px;
+  z-index: 50000;
+}
+
+/* TEXT BOX AREA */
+#talkbox-area{
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  z-index: 100000;
+}
+
+img#textbox{
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+#intro-fight{
+  position: absolute;
+  height: 80%;
+  top: 10%;
+  width: 230px;
+  left: 15px;
+  margin: 5px 0;
+}
+
+#intro-text{
+  position: absolute;
+  left: 5px;
+  font-size: 16px;
+  color: white;
+  top: 5px;
+}
+
+/* MENUA BOX AREA */
+#menu-area{
+  display: none;
+}
+
+img#menubox{
+  position: absolute;
+  right: 0;
+  top: 0px;
+  height: 100px;
+  width: auto;
+}
+
+.menu-button{
+  position: absolute;
+  font-size: 20px;
+  width: 80px;
+  height: 35px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+}
+
+#fight-button{
+  top: 18px;
+  right: 140px;
+}
+
+#bag-button{
+  top: 18px;
+  right: 20px;
+}
+
+#pokemon-button{
+  top: 55px;
+  right: 140px;
+}
+
+#run-button{
+  top: 55px;
+  right: 20px;
+}
+
+.arrow-box{
+  position: absolute;
+  opacity: 0;
+  width: 90px;
+  height: 35px;
+}
+
+.arrow-box:hover{
+  opacity: 1;
+}
+
+#fight-arrow{
+  top: 18px;
+  right: 140px;
+}
+
+#bag-arrow{
+  top: 18px;
+  right: 20px;
+}
+
+#pokemon-arrow{
+  top: 55px;
+  right: 118px;
+  width: 112px;
+}
+
+#run-arrow{
+  top: 55px;
+  right: 20px;
+}
+
+.select-arrow{
+  position: absolute;
+  height: 15px;
+  width: auto;
+  top: 6px;
+}
+
+/* ATTACK BOX AREA */
+
+.attackbox-area, img#attackbox{
+  position: absolute;
+  left: 0;
+  top: 0px;
+  height: 100px;
+  width: 65%;
+}
+
+img#attackbox{
+  display: none;
+}
+
+img#statbox{
+  display: none;
+  position: absolute;
+  right: 2px;
+  top: 0px;
+  height: 100px;
+  width: 35%;
+}
+
+.attack-button{
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  width: 135px;
+  height: 35px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+}
+
+.attack-arrow-box{
+  display: none;
+  position: absolute;
+  opacity: 0;
+  width: 135px;
+  height: 35px;
+}
+
+.attack-arrow-box:hover{
+  opacity: 1;
+}
+
+#attack-one{
+  left: 25px;
+  top: 18px;
+}
+#attack-two{
+  left: 25px;
+  top: 55px;
+}
+#attack-three{
+  left: 170px;
+  top: 18px;
+}
+#attack-four{
+  left: 170px;
+  top: 55px;
+}
+
+#arrow-one{
+  left: 15px;
+  top: 18px;
+  width: 135px;
+}
+#arrow-two{
+  left: 15px;
+  top: 55px;
+  width: 135px;
+}
+#arrow-three{
+  left: 160px;
+  top: 18px;
+  width: 135px;
+}
+#arrow-four{
+  left: 160px;
+  top: 55px;
+  width: 135px;
+}
+
+/* END BUTTON */
+#end-battle{
+  display: none;
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  bottom: 0;
+  right: 0;
+}
+#end-button{
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border: 3px solid white;
+  z-index: 120000;
+}
+
+/* MEDIA QUERY*/
+@media (max-width:767px) {
+    #wrapper {
+    padding-left: 70px;
+    transition: all .4s ease 0s;
+	}
+	#sidebar-wrapper {
+	    left: 70px;
+	}
+	#wrapper.active {
+	    padding-left: 400px;
+	}
+	#wrapper.active #sidebar-wrapper {
+	    left: 150px;
+	    width: 400px;
+	    transition: all .4s ease 0s;
+	}
+}
+
+
+

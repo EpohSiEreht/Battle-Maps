@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app="BattleMapApp">
+<head>
+	<title>Battle Maps!</title>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLhAxWsRP5t3uIwyDMxhbdxdKiQItTHT8"></script>
+    <!-- JS Source -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <!-- Angular Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/services/gservice.js"></script>
+    <script src="js/controllers/battlemaps.js"></script>
+</head>
+<body class="container" ng-controller="mainController">
+
+<div id="wrapper" class="active">
+      
+      <!-- Sidebar -->
+            <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      	<ul id="sidebar_menu" class="sidebar-nav">
+           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+      	</ul>
+        <ul class="sidebar-nav" id="sidebar">     
+            <li class="logout-list"><a href="/logout" class="logout">Logout<span class="sub_icon fa fa-sign-out"></span></a></li>
+        </ul>
+    </div>
+          
+</div>
+
+<div id="battle-area">
+
+    <div class="screen">
+
+      <img src="/images/backdrop.png" id="back-drop">
+      <div class="enemy">
+        <img src="#" id="enemy-character">
+        <div id="enemy-stat-area">
+          <img src="/images/enemyStatus.png" id="enemy-status">
+          <div id="enemy-health-background"></div>
+          <div id="enemy-health"></div>
+          <h1 id="enemy-name"></h1>
+          <h1 id="enemy-level"></h1>
+        </div>
+      </div>
+      <div class="yourPokemon">
+        <img src="#" id="your-character">
+        <div id="your-stat-area">
+          <img src="/images/yourStatus.png" id="your-status">
+          <div id="your-health-background"></div>
+          <div id="your-health"></div>
+          <div id="your-exp-background"></div>
+          <div id="your-exp"></div>
+          <h1 id="your-name"></h1>
+          <h1 id="your-level"></h1>
+          <h1 id="your-hp"></h1>
+          <h1 id="your-max-hp"></h1>
+        </div>
+      </div>
+
+      <img src="#" id="enemy-trainer">
+      <img src="http://sprites.pokecheck.org/t/b013.gif" id="your-trainer">
+
+      <div id="left-hider"></div>
+      <div id="right-hider"></div>
+      <div id="bottom-hider"></div>
+      <div id="top-hider"></div>
+      <div id="left-border"></div>
+      <div id="right-border"></div>
+      <div id="bottom-border"></div>
+      <div id="top-border"></div>
+
+      <div id="talkbox-area">
+        <img src="/images/textBox.png" id="textbox">
+        <div id="intro-fight">
+          <p id="intro-text">TRAINER BROUGHT OUT CHARMANDER</p>
+        </div>
+        <div id="end-battle">
+          <button id="end-button" class="btn btn-success" type="button"> END BATTLE </h1>
+        </div>
+        <div id="menu-area">
+          <img src="/images/menubox.png" id="menubox">
+          <p class="menu-button" id="fight-button"> FIGHT </p>
+          <div class="arrow-box" id="fight-arrow">
+            <img src="/images/select-arrow.png" class="select-arrow" id="select-fight">
+          </div>
+          <p class="menu-button" id="bag-button"> BAG </p>
+          <div class="arrow-box" id="bag-arrow">
+            <img src="/images/select-arrow.png" class="select-arrow" id="select-bag">
+          </div>
+          <p class="menu-button" id="pokemon-button"> POKeMON </p>
+          <div class="arrow-box" id="pokemon-arrow">
+            <img src="/images/select-arrow.png" class="select-arrow" id="select-pokemon">
+          </div>
+          <p class="menu-button" id="run-button"> RUN </p>
+          <div class="arrow-box" id="run-arrow">
+            <img src="/images/select-arrow.png" class="select-arrow" id="select-run">
+          </div>
+        </div>
+        <div id="attackbox-area">
+          <img src="/images/menubox.png" id="attackbox">
+          <p class="attack-button" id="attack-one"> First attack </p>
+          <div class="attack-arrow-box" id="arrow-one">
+            <img src="/images/select-arrow.png" class="select-arrow">
+          </div>
+          <p class="attack-button" id="attack-two"> Second attack </p>
+          <div class="attack-arrow-box" id="arrow-two">
+            <img src="/images/select-arrow.png" class="select-arrow">
+          </div>
+          <p class="attack-button" id="attack-three"> Third attack </p>
+          <div class="attack-arrow-box" id="arrow-three">
+            <img src="/images/select-arrow.png" class="select-arrow">
+          </div>
+          <p class="attack-button" id="attack-four"> Fourth attack </p>
+          <div class="attack-arrow-box" id="arrow-four">
+            <img src="/images/select-arrow.png" class="select-arrow">
+          </div>
+        </div>
+        <img src="/images/menubox.png" id="statbox">
+      </div>
+
+    </div>
+</div>
+
+<div class="map-area" id="map"></div>
+
+
+</body>
+</html>

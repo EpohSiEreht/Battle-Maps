@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="BattleMapApp">
+<head>
+	<title>Battle Maps!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/signup.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/battlemaps.js"></script>
+</head>
+<body ng-controller="mainController">
+
+	<div class="container">
+
+		<div class="col-sm-6 col-sm-offset-3">
+
+		    <h1><span class="fa fa-sign-in"></span> Signup</h1>
+		    <!-- Show Messages that come back with authentication -->
+		    <% if (message.length > 0) { %>
+		        <div class="alert alert-danger"><%= message %></div>
+		    <% } %>
+
+		    <!-- Sign form -->
+		    <form role="form" action="/signup" method="post">
+		        <div class="form-group">
+		            <label>Email</label>
+		            <input type="text" class="form-control" name="email">
+		        </div>
+		        <div class="form-group">
+		            <label>Username</label>
+		            <input type="text" class="form-control" name="username">
+		        </div>
+		        <div class="form-group">
+		            <label>Password</label>
+		            <input type="password" class="form-control" name="password">
+		        </div>
+		        <div class="form-group trainer">
+		            <label>Choose Your Trainer</label><br>
+		            <div class="radio-inline">
+						<img src="http://sprites.pokecheck.org/t/144.gif" class="select-pic"><br>
+						<input type="radio" name="trainer" value="http://sprites.pokecheck.org/t/144.gif" checked>
+					</div>
+					<div class="radio-inline">
+						<img src="http://sprites.pokecheck.org/t/145.gif" class="select-pic"><br>
+						<input type="radio" name="trainer" value="http://sprites.pokecheck.org/t/145.gif">
+					</div>
+		        </div>
+		        <div class="form-group pokeblock">
+		            <label>Choose Your Starter Poke'mon</label><br>
+					<div class="radio-inline">
+						<img src="http://sprites.pokecheck.org/i/001.gif" class="select-pic"><br>
+						<input type="radio" name="character" value="http://sprites.pokecheck.org/i/001.gif" checked>
+					</div>
+					<div class="radio-inline">
+						<img src="http://sprites.pokecheck.org/i/004.gif" class="select-pic"><br>
+						<input type="radio" name="character" value="http://sprites.pokecheck.org/i/004.gif">
+					</div>
+					<div class="radio-inline">
+						<img src="http://sprites.pokecheck.org/i/007.gif" class="select-pic"><br>
+						<input type="radio" name="character" value="http://sprites.pokecheck.org/i/007.gif">
+					</div>
+		        </div>
+
+		        <button type="submit" class="btn btn-warning btn-lg" id="signup-button">Signup</button>
+		    </form>
+
+		    <hr>
+
+		    <p>Already have an account? <a href="/login">Login</a></p>
+		    <p>Or go <a href="/">home</a>.</p>
+
+		</div>
+		
+	</div>
+
+</body>
+</html>

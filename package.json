@@ -1,0 +1,33 @@
+{
+  "name": "battle-maps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular-route": "^1.5.0",
+    "angularjs-geolocation": "^0.1.3",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.1",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "jsonwebtoken": "^5.5.4",
+    "kerberos": "0.0.18",
+    "method-override": "^2.3.5",
+    "modernizr": "^3.3.1",
+    "mongoose": "^4.4.2",
+    "morgan": "^1.6.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pokemon-battle": "^1.3.0"
+  }
+}

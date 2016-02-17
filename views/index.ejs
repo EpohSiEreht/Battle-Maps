@@ -5,6 +5,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -12,7 +14,7 @@
 
 		<div class="jumbotron text-center">
 
-			<h1><span class="fa fa-street-view"></span> Battle Maps! </h1>
+			<h1> Battle Maps! </h1>
 
 			<p>Login or Register with:</p>
 
@@ -20,7 +22,31 @@
 			<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup </a>
 			
 		</div>
-		
+
+		  <!-- Trigger the modal with a button -->
+		  <button type="button" id="disclaimer" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">DISCLAIMER</button>
+
+		  <!-- Modal -->
+		  <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">DISCLAIMER</h4>
+		        </div>
+		        <div class="modal-body">
+		          <p>DISCLAIMER: THIS IS A NON-PROFIT FAN-BASED PARODY GAME. I DO NOT OWN ANY RIGHTS TO POKEMON AND ANY OF ITS AFFILIATED BRANDS. THIS GAME WAS ONLY CREATED FOR EDUCATIONAL PURPOSES SO THAT I COULD LEARN HOW TO CREATE A TURN BASED GAME USING GOOGLE MAPS API. POKEMON IS OWNED BY NINTENDO, GAME FREAK INC, AND CREATURES INC. PLEASE SUPPORT THE OFFICIAL FRANCHISE.</p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+		  </div>
+
 	</div>
 
 </body>

@@ -8,11 +8,19 @@
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLhAxWsRP5t3uIwyDMxhbdxdKiQItTHT8"></script>
+    <!-- Audio Sound Effects -->
+    <audio autoplay id="attack" src=""></audio>
+    <audio autoplay loop id="critical" src=""></audio>
+    <audio autoplay id="levelup" src=""></audio>
+    <audio autoplay loop id="ending" src=""></audio>
+    <audio autoplay loop id="battlemusic" src=""></audio>
     <!-- JS Source -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-route/angular-route.js"></script>
     <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- Angular Scripts -->
     <script src="js/app.js"></script>
     <script src="js/services/gservice.js"></script>
@@ -29,6 +37,14 @@
            <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
       	</ul>
         <ul class="sidebar-nav" id="sidebar">     
+            <li class="info-box">
+              <div id="your-info">
+                <img src="#" id="your-pic">
+                <img src="#" id="your-pokemon-pic">
+              </div>
+              <h1 id="your-username"> </h1>
+              <h1 id="your-pokemon-name"> </h1>
+            </li>
             <li class="logout-list"><a href="/logout" class="logout">Logout<span class="sub_icon fa fa-sign-out"></span></a></li>
         </ul>
     </div>

@@ -76,6 +76,7 @@ module.exports = function(app, passport) {
       	dbUser.local.exp = req.body.local.exp;
       	dbUser.local.lives = req.body.local.lives;
       	dbUser.local.lvl = req.body.local.lvl;
+      	dbUser.local.character = req.body.local.character;
 
       	dbUser.save(function(err, updatedUser) {
 		  	if (err) { console.log('Unsucessful') };

@@ -45,7 +45,7 @@ ctrl.controller('mainController', ['$scope', '$http', 'geolocation', 'gservice',
             var userID = response.data._id;
             console.log(data.coords.latitude);
 
-            $http.patch('/users/' + userID, {local: {latitude: data.coords.latitude, longitude: data.coords.longitude, exp: response.data.local.exp, lives: response.data.local.lives, lvl: response.data.local.lvl}})
+            $http.patch('/users/' + userID, {local: {latitude: data.coords.latitude, longitude: data.coords.longitude, exp: response.data.local.exp, lives: response.data.local.lives, lvl: response.data.local.lvl, character: response.data.local.character}})
                     .success(function (data) {
                         // // Once complete, clear the form (except location)
                         // $scope.formData.latitude = "";

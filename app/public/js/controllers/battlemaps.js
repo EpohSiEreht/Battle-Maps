@@ -12,10 +12,13 @@ ctrl.controller('mainController', ['$scope', '$http', 'geolocation', 'gservice',
     $("#wrapper").toggleClass("active");
 
     $("#menu-toggle").click(function(e) {
-        e.preventDefault();
         $("#wrapper").toggleClass("active");
+        if($('.info-box').css('display') === "none"){
+            $('.info-box').css('display', 'block');
+        } else if($('.info-box').css('display') === "block"){
+            $('.info-box').css('display', 'none');
+        }
     });
-
     
 
 

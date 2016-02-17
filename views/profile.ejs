@@ -44,6 +44,7 @@
               </div>
               <h1 id="your-username"> </h1>
               <h1 id="your-pokemon-name"> </h1>
+              <h1 id="your-lives"> </h1>
             </li>
             <li class="logout-list"><a href="/logout" class="logout">Logout<span class="sub_icon fa fa-sign-out"></span></a></li>
         </ul>
@@ -99,7 +100,7 @@
           <p id="intro-text">TRAINER BROUGHT OUT CHARMANDER</p>
         </div>
         <div id="end-battle">
-          <button id="end-button" class="btn btn-success" type="button"> END BATTLE </h1>
+          <button id="end-button" class="btn btn-success" type="button"> END BATTLE </button>
         </div>
         <div id="menu-area">
           <img src="/images/menubox.png" id="menubox">
@@ -142,7 +143,15 @@
         <img src="/images/menubox.png" id="statbox">
       </div>
 
+      <div id="enemy-attack-area">
+        <img src="" id="enemy-attack" style="width:50px;position:absolute;right:-35px;top:20px;">
+      </div>
+      <div id="your-attack-area">
+        <img src="" id="your-attack" style="width:50px;position:absolute;left:-20px;;top:20px;">
+      </div>
+
     </div>
+    <!-- <canvas id="move-effects"></canvas> -->
 </div>
 
 <div class="map-area" id="map"></div>

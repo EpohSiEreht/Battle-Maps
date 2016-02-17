@@ -38,7 +38,18 @@ angular.module('gservice', [])
                 $('#your-username').html(currentUser[0].username);
                 $('#your-pic').attr('src', currentUser[0].trainer);
                 $('#your-pokemon-pic').attr('src', currentUser[0].icon);
-                $('#your-pokemon-name').html()
+                var heart = '<i class="fa fa-heart"></i>';
+                String.prototype.repeat = function(n){
+                    n = n || 1;
+                    return Array(n+1).join(this);
+                }
+
+                for(var i = 0; i < currentUser[0].lvl + 1; i++ ){
+                    if(currentUser[0].lvl === i){
+                        var hearts = heart.repeat(i);
+                    }
+                }
+                $('#your-lives').html('<br>'+hearts);
             });
 
             // Perform an AJAX call to get all of the records in the db.
@@ -76,15 +87,11 @@ angular.module('gservice', [])
                 // Create popup windows for each record
                  var contentString =    '<div class="information>'+
                                           '<div class="row top">'+
-                                            '<span class="col-md-3">'+
-                                              '<img src="'+user.local.character+'" class="infopic">' +
-                                            '</span>'+
-                                          '<div class="row infoCol">'+
-                                            '<span class="span5">'+
-                                              '<p><b>Username</b>: ' + user.local.username + '</p>'+
-                                              '<p><b>Lives</b>: ' + user.local.lives + '</p>'+
-                                            '</span>'+
-                                          '</div>'+
+                                              '<div class="row infoCol">'+
+                                                '<span class="span9">'+
+                                                  '<p><b>TRAINER</b> <br>' + user.local.username + '</p>'+
+                                                '</span>'+
+                                              '</div>'+
                                           '<div class="row bottom">'+
                                             '<span class="span9">'+
                                               '<a class="battle btn btn-default btn-sm" id="startBattle">Battle!</a>'+
@@ -154,6 +161,11 @@ angular.module('gservice', [])
                         // When clicked, open the selected marker's message
                         currentSelectedMarker = n;
                         n.message.open(map, marker);
+                        // When clicking outside of infoBox, close infoBox
+                        google.maps.event.addListener(map, 'click', function(e){
+                            n.message.close(map, marker);
+                        });
+
                         // Set up health for enemy and user
                         var userHealth;
                         var maxUserHealth;
@@ -206,10 +218,10 @@ angular.module('gservice', [])
                                 // Declare moves
                                 eMoves[0] = new move("TACKLE", 50);
                                 eMoves[1] = new move("GROWL", 0);
-                                if(currentUser[0].lvl >= 9){
+                                if(n.character.lvl >= 9){
                                     eMoves[2] = new move("VINE WHIP", 45);
                                 }
-                                if(currentUser[0].lvl >= 13){
+                                if(n.character.lvl >= 13){
                                     eMoves[3] = new move("CUT", 40);
                                 }
                             } else if(n.character === frontCharmander) {
@@ -218,10 +230,10 @@ angular.module('gservice', [])
                                 // Declare moves
                                 eMoves[0] = new move("GROWL", 0);
                                 eMoves[1] = new move("SCRATCH", 50);
-                                if(currentUser[0].lvl >= 9){
+                                if(n.character.lvl >= 9){
                                     eMoves[2] = new move("EMBER", 40);
                                 }
-                                if(currentUser[0].lvl >= 13){
+                                if(n.character.lvl >= 13){
                                     eMoves[3] = new move("SLASH", 70);
                                 }
                             } else if(n.character === frontSquirtle) {
@@ -230,10 +242,10 @@ angular.module('gservice', [])
                                 // Declare moves
                                 eMoves[0] = new move("TACKLE", 50);
                                 eMoves[1] = new move("TAIL WHIP", 0);
-                                if(currentUser[0].lvl >= 9){
+                                if(n.character.lvl >= 9){
                                     eMoves[2] = new move("WATER GUN", 40);
                                 }
-                                if(currentUser[0].lvl >= 13){
+                                if(n.character.lvl >= 13){
                                     eMoves[3] = new move("BITE", 60);
                                 }
                             } else if(n.character === frontIvysaur){
@@ -714,7 +726,12 @@ angular.module('gservice', [])
 
                             setUpEnemy();
                             setUpUser();
+
+
+                            // var canvas  = document.getElementById('canvas'),
+                            //     context = canvas.getContext('2d');
                             
+
                             // Select attack for user
                             $('body').on('click', '.attack-arrow-box', function(e){
                                 var selectedAttack = $(this).prev('.attack-button')[0].innerHTML;
@@ -739,6 +756,41 @@ angular.module('gservice', [])
                                         $('#intro-text').html(enemyPokemonName + " used " + eMoves[enemyAttackId].move + "!");
                                         damage = Math.floor( ((2 * n.lvl + 10)/250) * eMoves[callEnemyAttack()].basedmg + 5 );
                                     }
+                                    if(eMoves[callEnemyAttack()].move === "GROWL"){
+                                        $('#your-attack').attr('src', "../../images/growl.png").css('transform', 'scaleX(-1)').delay(100).hide('fast').delay(100).show('fast').delay(100).hide('fast');
+                                        setTimeout(function(){
+                                            $('#your-character').fadeOut('fast').delay(50).fadeIn('fast').delay(50).fadeOut('fast').delay(50).fadeIn('fast');
+                                        }, 300);
+                                        setTimeout(function(){
+                                            $('#intro-text').html(yourPokemonName + "'s defense fell!");
+                                        }, 600);
+                                    } 
+                                    else if(eMoves[callEnemyAttack()].move === "TAIL WHIP"){
+                                            $('#enemy-character').animate({
+                                                left: "+=20px"
+                                            }, 100, function(){
+                                                $('#enemy-character').animate({
+                                                    left: "-=40px"
+                                                }, 100).animate({
+                                                    left: "+=20px"
+                                                }, 100);
+                                                $('#your-character').fadeOut('fast').delay(50).fadeIn('fast').delay(50).fadeOut('fast').delay(50).fadeIn('fast');
+                                                $('#intro-text').html(yourPokemonName + "'s defense fell!");
+                                            });
+                                        }  
+                                    else {
+                                        $('#enemy-character').animate({
+                                            left: "+=20px"
+                                        }, 100, function(){
+                                            $('#enemy-character').animate({
+                                                left: "-=40px"
+                                            }, 100).animate({
+                                                left: "+=20px"
+                                            }, 100);
+                                            $('#your-character').fadeOut('fast').delay(50).fadeIn('fast').delay(50).fadeOut('fast').delay(50).fadeIn('fast');
+
+                                        });  
+                                    }
                                     $('#attack').attr('src', '../../sounds/attack.mp3');
                                     return damage;
                                 }
@@ -752,6 +804,42 @@ angular.module('gservice', [])
                                         $('#intro-text').html(yourPokemonName + " used " + moves[userAttack].move + "!");
                                         damage = Math.floor( ((2 * currentUser[0].lvl + 10)/250) * moves[userAttack].basedmg + 5 );
                                     }
+                                    if(moves[userAttack].move === "GROWL"){
+                                        $('#enemy-attack').attr('src', "../../images/growl.png").delay(100).hide('fast').delay(100).show('fast').delay(100).hide('fast');
+                                        setTimeout(function(){
+                                            $('#enemy-character').fadeOut('fast').delay(50).fadeIn('fast').delay(50).fadeOut('fast').delay(50).fadeIn('fast');
+                                        }, 300);
+                                        $('#intro-text').html(enemyPokemonName + "'s defense fell!");
+                                    } 
+                                    else if(moves[userAttack].move === "TAIL WHIP"){
+                                        $('#your-character').animate({
+                                            left: "-=20px"
+                                        }, 100, function(){
+                                            $('#your-character').animate({
+                                                left: "+=40px"
+                                            }, 100).animate({
+                                                left: "-=20px"
+                                            }, 100);
+                                            $('#enemy-character').fadeOut('fast').delay(50).fadeIn('fast').delay(50).fadeOut('fast').delay(50).fadeIn('fast');
+                                            $('#intro-text').html(enemyPokemonName + "'s defense fell!");
+                                        });
+                                    }
+                                    else {
+                                        $('#your-character').animate({
+                                            left: "-=20px"
+                                        }, 100, function(){
+                                            $('#your-character').animate({
+                                                left: "+=40px"
+                                            }, 100).animate({
+                                                left: "-=20px"
+                                            }, 100);
+                                            $('#enemy-character').fadeOut('fast').delay(50).fadeIn('fast').delay(50).fadeOut('fast').delay(50).fadeIn('fast');
+
+                                        });
+                                    }
+
+                                    
+
                                     $('#attack').attr('src', '../../sounds/attack.mp3');
                                     return damage;
                                 }

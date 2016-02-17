@@ -36,10 +36,6 @@ body{
   color: black;
 }
 
-h1, p {
-
-}
-
 /* SideNav Bar */
 .row{
     margin-left:0px;
@@ -194,6 +190,10 @@ a.logout{
   display: inline-block;
 }
 
+.info-box{
+  display:none;
+}
+
 #your-info{
   position: absolute;
   width: 100%;
@@ -215,11 +215,25 @@ a.logout{
   right: 25%;
 }
 
-h1#your-username{
+#your-username{
   position: absolute;
-  top: 300px;
+  width: 100%;
   color: white;
+  top: 300px;
 }
+
+#your-lives{
+  position: absolute;
+  width: 100%;
+  top: 350px;
+}
+
+i.fa.fa-heart{
+  position: relative;
+  left: -5px;
+  color: #AC2D2A;
+}
+
 
 /*GOOGLE MAPS SECTION*/
 #map{
@@ -233,55 +247,58 @@ h1#your-username{
   right: 70px;
 }
 
-.gm-style-iw{
+/*.gm-style-iw{
 	text-align: center;
   background-color: #FF464F !important;
   color: white;
+}*/
+
+.gm-style-iw {
+  top: 9px !important;
+   text-align: center;
+}
+
+.gm-style-iw p{
+  text-align: center;
+  font-size: 25px;
 }
 
 .gm-style-iw + div{
-  right: 20px !important;
-  top: 13px !important;
   border-radius: 50% !important;
   opacity: 1 !important;
 }
 
-.information{
-	position: relative;
-}
-
 .top{
 	position: relative;
-	top: 10%;
-	height: 80%;
+	height: 40%;
 	width: 100%;
-  background-color: red !important;
 }
 
 .bottom{
 	position: relative;
-	height: auto;
 	width: 100%;
+  padding-bottom: 10px;
 }
 
 a.battle{
 	position: relative;
 	width: 100%;
-  margin-top: 60px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+  background-color: #FF3E42;
 }
 
-.infopic{
-	position: relative;
-	display: inline-block;
-	width: 70px;
-	height: 70px;
+a.battle:hover{
+  color: white;
+  background-color: #FF3E42;
 }
 
 .infoCol{
 	position: relative;
 	display: inline-block;
 	text-align: left;
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 /* infoWindow Sections */
@@ -320,7 +337,7 @@ a.battle{
 #battle-area{
   position: absolute;
   display: none;
-	background-color: #A3EE8C;
+	background-color: #EFEFEF;
   height: 100%;
   width: -moz-calc(100% - 70px);
   width: -webkit-calc(100% - 70px);
@@ -340,12 +357,40 @@ a.battle{
   height: 350px;
 }
 
+#move-effects{
+  position: relative;
+  display: block;
+  margin: 120px auto;
+  width: 500px;
+  height: 250px;
+  top: -470px;
+  z-index: 19000000;
+}
+
+#your-attack-area{
+  position: absolute;
+  left: 320px;
+  width: 100px;
+  height: 100px;
+  bottom: 210px;
+  z-index: 58000;
+}
+
+#enemy-attack-area{
+  position: absolute;
+  left: 70px;
+  width: 100px;
+  height: 100px;
+  bottom: 100px;
+  z-index: 70000;
+}
+
 #left-hider{
   position: absolute;
   width: 100px;
   height: 100%;
   left: -100px;
-  background-color: #FF5669;
+  background-color:  #EFEFEF;
   z-index: 90000;
 }
 
@@ -354,7 +399,7 @@ a.battle{
   width: 100px;
   height: 100%;
   right: -100px;
-  background-color: #FF5669;
+  background-color:  #EFEFEF;
   z-index: 90000;
 }
 
@@ -366,7 +411,7 @@ a.battle{
   bottom: -450px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #FF5669;
+  background-color:  #EFEFEF;
   z-index: 90000;
 }
 
@@ -378,7 +423,7 @@ a.battle{
   top: -100px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  background-color: #FF5669;
+  background-color:  #EFEFEF;
   z-index: 90000;
 }
 
@@ -387,7 +432,7 @@ a.battle{
   width: 80px;
   height: 100%;
   left: -80px;
-  background-color: black;
+  background-color: #181818;
   z-index: 99000;
 }
 
@@ -396,7 +441,7 @@ a.battle{
   width: 80px;
   height: 100%;
   right: -80px;
-  background-color: black;
+  background-color: #181818;
   z-index: 99000;
 }
 
@@ -408,7 +453,7 @@ a.battle{
   bottom: -80px;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
-  background-color: black;
+  background-color: #181818;
   z-index: 99000;
 }
 
@@ -420,7 +465,7 @@ a.battle{
   top: -80px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  background-color: black;
+  background-color: #181818;
   z-index: 99000;
 }
 

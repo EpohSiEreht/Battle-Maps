@@ -524,6 +524,7 @@ angular.module('gservice', [])
                                     $('#attack-four').html(moves[3].move);
                                 }
                             }
+
                             if(currentUser[0].icon === frontBulbasaur || currentUser[0].icon === frontIvysaur || currentUser[0].icon === frontVenusaur){
                                 maxUserHealth = 45;
                                 for(var i = 6; i < 101; i++){
@@ -727,14 +728,16 @@ angular.module('gservice', [])
                             setUpEnemy();
                             setUpUser();
 
-
-                            // var canvas  = document.getElementById('canvas'),
-                            //     context = canvas.getContext('2d');
                             
-
                             // Select attack for user
                             $('body').on('click', '.attack-arrow-box', function(e){
+
+                                
                                 var selectedAttack = $(this).prev('.attack-button')[0].innerHTML;
+
+                                console.log(selectedAttack);
+
+
                                 $('#attackbox, #statbox, .attack-button, .attack-arrow-box').hide();
                                 $('#menu-area').show();
                                 // Declare a variable that will grab the user's attack index
@@ -1078,6 +1081,13 @@ angular.module('gservice', [])
                         // When user clicks "FIGHT", display pokemon's attack list
                         $('body').on('click', '#fight-arrow', function(){
                             $('#attackbox, #statbox, .attack-button, .attack-arrow-box').show();
+                            console.log($('#attack-four').html());
+                            if($('#attack-four').html() === "-"){
+                                $('#arrow-four').hide();
+                            } else if($('#attack-three').html() === "-"){
+                                $('#arrow-three').hide();
+                                $('#arrow-four').hide();
+                            }
                             $('#menu-area').hide();
                         });
                     });

@@ -1,6 +1,6 @@
 # Battle-Maps
 A web applications created for educational purposes to practice creating a MEAN application using Google Maps API
-Link: (poke-map.herokuapp.com)[https://poke-map.herokuapp.com]
+Link: https://poke-map.herokuapp.com
 
 ## Features
 1. Create a profile using a unique email address and password

@@ -79,7 +79,7 @@ module.exports = function(app, passport) {
       	dbUser.local.character = req.body.local.character;
 
       	dbUser.save(function(err, updatedUser) {
-		  	if (err) { console.log('Unsucessful') };
+		  	if (err) { console.log('Unsuccessful') };
 		    res.json( updatedUser );
 
       	});

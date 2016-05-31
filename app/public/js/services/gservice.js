@@ -766,7 +766,7 @@ angular.module('gservice', [])
                                         }, 300);
                                         setTimeout(function(){
                                             $('#intro-text').html(yourPokemonName + "'s defense fell!");
-                                        }, 600);
+                                        }, 1000);
                                     } 
                                     else if(eMoves[callEnemyAttack()].move === "TAIL WHIP"){
                                             $('#enemy-character').animate({
@@ -1032,6 +1032,7 @@ angular.module('gservice', [])
                                                     width: "162px"
                                                 }, 1000, function(){
                                                     setTimeout(function(){
+                                                        $('#levelup').attr('src', '../../sounds/levelup.mp3');
                                                         $('#your-level').html(afterLevel);
                                                         $('#your-exp').css('width', '0px');
                                                         $('#your-exp').animate({
